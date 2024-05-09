@@ -1,0 +1,176 @@
+<div class="d-flex justify-content-between pages p-3">
+  <p routerLink="/home">Home</p>
+  <div class="d-flex">
+    <p class="me-3" routerLink="/adminpart">CARTS</p>
+    <p class="ms-3" routerLink="/addproduct">ADD PRODUCTS</p>
+  </div>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-4">
+        <!--start logout button -->
+        <h2 class="heading-section">
+          <a class="btn btn-primary" (click)="logout()" role="button">logout</a>
+        </h2>
+      </div>
+    </div>
+    <!--End logout button -->
+    <!-- start filter -->
+    <form class="row g-3 mb-2" [formGroup]="form">
+      <div class="col-auto">
+        <label for="staticEmail2" class="visually-hidden">filter data</label>
+        <input
+          type="text"
+          readonly
+          class="form-control-plaintext"
+          id="staticEmail2"
+          value="Filter Data"
+        />
+      </div>
+      <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Start</label>
+        <input
+          formControlName="start"
+          type="date"
+          class="form-control"
+          placeholder="Start"
+        />
+      </div>
+      <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">End</label>
+        <input
+          formControlName="end"
+          type="date"
+          class="form-control"
+          placeholder="End"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="submit"
+          class="form-control"
+          (click)="filterCart()"
+          name=""
+          id=""
+          aria-describedby="helpId"
+          placeholder=""
+        />
+      </div>
+    </form>
+    <!-- End Filter -->
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h3 class="h5 mb-4 text-center">Table Accordion</h3> -->
+        <div class="table-wrap">
+          <table class="table table-responsive">
+            <thead class="thead-primary">
+              <tr>
+                <th>Product</th>
+
+                <th>Quantity</th>
+
+                <th>View</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of carts; let i = index"
+                class="alert"
+                role="alert"
+              >
+                <td>
+                  <div class="img">{{ item.date | date : "shortDate" }}</div>
+                </td>
+                <td>
+                  <div class="email">
+                    {{ item.products.length }}
+                  </div>
+                </td>
+                <!-- ================start view button ============== -->
+                <td class="quantity">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="openPopup(); viewProduct(i)"
+                  >
+                    View
+                  </button>
+                  <div
+                    class="modal"
+                    tabindex="-1"
+                    role="dialog"
+                    style="overflow: auto"
+                    [ngStyle]="{ display: displayStyle }"
+                  >
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Cart Details</h4>
+                          <i
+                            class="fa-solid fa-xmark"
+                            (click)="closePopup()"
+                          ></i>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table second-table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Image</th>
+                                <!-- <th scope="col">Price</th> -->
+                                <th scope="col">Quantity</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr
+                                *ngFor="
+                                  let product of allProducts;
+                                  let in = index
+                                "
+                              >
+                                <th scope="row">{{ in }}</th>
+                                <td>{{ product.item.title }}</td>
+                                <td>
+                                  <img src="{{ product.item.image }}" alt="" />
+                                </td>
+                                <!-- <td>{{ product.item.price }}</td> -->
+                                <td>{{ product.quantity }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-danger"
+                            (click)="closePopup()"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <!-- ================End view button ============== -->
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="deleteProduct(item.id)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+/* ==============================start our-information ================================= */
+* {
+  box-sizing: border-box;
+}
+.page {
+  background-color: black;
+}
+.our-information {
+  height: 300px;
+}
+.sections {
+  position: relative;
+  top: 40px;
+  color: white;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+.input-group {
+  width: 150px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 1000px) {
+  .sections {
+    margin-inline-start: 30px;
+  }
+}
+@media (max-width: 1000px) {
+  h3 {
+    font-size: 14px;
+  }
+  ul li {
+    font-size: 10px;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: wrap;
+  }
+  .input-group {
+    width: 70px;
+  }
+  .download img {
+    width: 60px;
+    height: 50px;
+  }
+}
+/* ==============================End our-information ================================= */

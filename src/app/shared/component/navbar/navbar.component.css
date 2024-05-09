@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+.navbar {
+  display: flex;
+}
+
+@media (min-width: 1000px) {
+  .title,
+  .search {
+    width: 27%;
+  }
+  .pages {
+    width: 40%;
+  }
+  .title img {
+    width: 32px;
+    height: 32px;
+    margin-inline-end: 4px;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 1000px) {
+  .title img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.title {
+  text-align: center;
+}
+.title:hover {
+  cursor: pointer;
+}
+
+.pages ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+ul li {
+  list-style-type: none;
+  font-weight: 500;
+  /* margin-inline-start: 40px; */
+}
+ul li:hover {
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.search input {
+  /* width: 80%; */
+  text-align: center;
+}
+.search .favorite,
+.search .shop-car {
+  margin-inline-start: 10px;
+}
+
+.favorite i:hover,
+.shop-car i:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .button {
+    display: block;
+  }
+  .pages ul {
+    flex-direction: column;
+  }
+  .navbar {
+    position: relative;
+    flex-direction: column;
+  }
+  .search {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  form {
+    width: 90%;
+  }
+  input {
+    max-width: 100%;
+    margin-inline-start: 8px;
+    text-align: start;
+  }
+  .search .shop-car {
+    margin-inline-end: 5px;
+  }
+  .pages ul {
+    position: absolute;
+    background-color: #f5f5f5;
+    bottom: -125px;
+    z-index: 1;
+    width: 98%;
+    margin-inline-start: 1%;
+    border: 1px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .pages ul li {
+    text-align: center;
+    padding: 5px;
+    border: 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  ul li:hover {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    background-color: #aba5a566;
+    color: whitesmoke;
+  }
+  .pages {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media (min-width: 1000px) {
+  .button {
+    display: none;
+  }
+}
+
+.visable {
+  display: none;
+}
+
+button {
+  /* background-color: transparent; */
+  border-color: transparent;
+  padding: 5px 7px;
+  border-radius: 6px;
+  margin-top: 2px;
+  box-shadow: 1.5px 2px 4px;
+}

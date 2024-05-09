@@ -1,0 +1,151 @@
+<div *ngIf="!loaded" class="container">
+  <!-- start video section -->
+  <div class="vid mb-4">
+    <div class="discreption">
+      <div class="text">
+        <h1>ONLINE</h1>
+        <h1>FASHION</h1>
+        <h1>## SALE</h1>
+      </div>
+      <div class="but">
+        <button routerLink="/AllProducts" class="btn btn">Shop Now</button>
+      </div>
+    </div>
+    <video onloadedmetadata="this.muted=true" autoplay loop alt="ss">
+      <source
+        src="assets/x2mate.com-Creative Animation Commercial product ads (3).mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+  <hr />
+  <!--======================= End video section ============================-->
+
+  <!-- =============== start sales section  ======================-->
+  <div class="flash-sales mt-5">
+    <h4>Today’s</h4>
+    <div class="text d-flex align-items-end">
+      <h3 class="me-5">Flash Sales</h3>
+      <div class="time ms-3">
+        <p>Days</p>
+        <p class="number">03</p>
+      </div>
+      <p class="ms-3 cotation">:</p>
+      <div class="time ms-3">
+        <p>Hours</p>
+        <p class="number">23</p>
+      </div>
+      <p class="ms-3 cotation">:</p>
+      <div class="time ms-3">
+        <p>Minutes</p>
+        <p class="number">19</p>
+      </div>
+      <p class="ms-3 cotation">:</p>
+      <div class="time ms-3">
+        <p>Seconds</p>
+        <p class="number">56</p>
+      </div>
+    </div>
+    <!-- start carts -->
+    <div class="row">
+      <div
+        *ngFor="let item of someOfProducts"
+        class="carts col-lg-2 col-md-6 col-sm-12 ms-5 mt-3"
+      >
+        <app-product
+          [data]="item"
+          (item)="addLocalStorage($event)"
+        ></app-product>
+      </div>
+    </div>
+    <!-- End carts -->
+    <div class="">
+      <button type="button" routerLink="/AllProducts" class="btn">
+        View All Products
+      </button>
+    </div>
+  </div>
+
+  <!-- =============== End sales section  ======================-->
+  <hr />
+  <!-- ==============start our Categories========================= -->
+  <div class="categories mt-3 mb-3">
+    <h4>Categories</h4>
+    <h3>Browse By Category</h3>
+    <div class="icons row">
+      <div class="elctronics col-lg-2 col-md-3 col-sm-4">
+        <img src="\assets\mobile.png" alt="" />
+        <p>Phones</p>
+      </div>
+      <div class="elctronics col-lg-2 col-md-3 col-sm-4">
+        <img src="\assets\smartwatchs.png" alt="" />
+        <p>Smartwatchs</p>
+      </div>
+      <div class="elctronics col-lg-2 col-md-3 col-sm-5">
+        <img src="\assets\computers.png" alt="" />
+        <p>Computers</p>
+      </div>
+      <div class="elctronics col-lg-2 col-md-3 col-sm-5">
+        <img src="\assets\gaming.png" alt="" />
+        <p>Gaming</p>
+      </div>
+      <div class="elctronics col-lg-2 col-md-3 col-sm-5">
+        <img src="\assets\headphones.png" alt="" />
+        <p>Headphones</p>
+      </div>
+    </div>
+  </div>
+  <!-- ==============End our Categories========================= -->
+  <hr />
+  <!-- ================start our product================= -->
+  <div class="our-product mt-4 mb-4">
+    <h4>Our Products</h4>
+    <!-- start slider -->
+    <h3 class="me-5 mb-4">Explore Our Products</h3>
+
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="\assets\GradientHoodie-PDP_FlatLay.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img src="\assets\item_08_01.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="\assets\هودي-سادة-416x416.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- End slider -->
+  </div>
+  <!-- ================End our product================= -->
+</div>
+<div class="mt-5 mb-5">
+  <app-spiner *ngIf="loaded"></app-spiner>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="!loaded" class="d-flex mt-5 all-details">
+  <img class="product" src="{{ product.image }}" alt="" />
+  <ul>
+    <li class="title">{{ product.title }}</li>
+    <li>
+      <div class="rating">
+        <img class="me-2" src="\assets\rating.png" alt="" />
+        <!-- {{ product.rating.rate }} -->
+      </div>
+    </li>
+    <li class="price">{{ product.price | currency }}</li>
+    <li class="description">{{ product.description }}</li>
+    <hr />
+  </ul>
+</div>
+<app-spiner *ngIf="loaded"></app-spiner>

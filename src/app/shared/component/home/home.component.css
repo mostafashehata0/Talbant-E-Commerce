@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.discreption h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.vid .discreption button {
+  display: block;
+  background-color: #00ff66;
+  color: white;
+  margin: auto;
+}
+@media (min-width: 1000px) {
+  .vid {
+    display: grid;
+    margin-top: 40px;
+  }
+
+  .vid .discreption {
+    grid-column: 1 / span 3;
+  }
+  .vid .discreption button {
+    margin-top: 40px;
+  }
+  .vid .discreption .text {
+    margin-top: 100px;
+  }
+
+  .vid video {
+    grid-column: 7 / 12;
+    column-gap: 10px;
+    box-shadow: 1.5px 5px 7px;
+  }
+
+  .vid video {
+    height: 500px;
+  }
+}
+@media (max-width: 1000px) {
+  .vid {
+    margin-top: 40px;
+  }
+
+  .vid video {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-top: 10px;
+  }
+  .vid .discreption button {
+    margin-top: 20px;
+  }
+}
+
+/*==================== start flash sales================ */
+.flash-sales::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 25px;
+  height: 50px;
+  background-color: #db4444;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.flash-sales {
+  margin-bottom: 50px;
+}
+.flash-sales h4 {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  left: 26px;
+  color: #db4444;
+  font-size: 20px;
+}
+.flash-sales h3 {
+  font-size: 50px;
+}
+.text .time :first-child {
+  font-size: 16px;
+  font-weight: 700;
+}
+.number {
+  font-size: 30px;
+}
+.cotation {
+  font-size: 40px;
+}
+
+@media (max-width: 1000px) {
+  .time,
+  .cotation {
+    display: none;
+  }
+}
+
+.btn {
+  background-color: #db4444;
+  color: white;
+  padding: 10px;
+  /* margin-top: 5px; */
+  margin: 25px auto;
+  display: block;
+}
+/*-========== End flash sales =======================*/
+/* ===================start our categories======================== */
+.categories::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 25px;
+  height: 50px;
+  background-color: #db4444;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.categories h4 {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  left: 26px;
+  color: #db4444;
+  font-size: 20px;
+}
+.categories h3 {
+  font-size: 50px;
+}
+.categories .icons .elctronics img {
+  width: 70px;
+  height: 90px;
+  margin: 30px auto 10px;
+  display: block;
+}
+.categories .icons .elctronics {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0 20px 10px;
+  border: 3px solid #ddd9d9;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.categories .icons .elctronics:hover {
+  background-color: #db4444;
+  color: white;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+@media (max-width: 600px) {
+  .categories .icons .elctronics {
+    margin-left: 80px;
+  }
+}
+/* ===================End our categories======================== */
+
+/* ==========================start our products ================= */
+.carousel {
+  margin: auto;
+}
+.our-product::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 25px;
+  height: 50px;
+  background-color: #db4444;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.our-product h4 {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  left: 26px;
+  color: #db4444;
+  font-size: 20px;
+}
+.our-product h3 {
+  font-size: 50px;
+}
+#carouselExample {
+  width: 800px;
+}
+.carousel img {
+  max-height: 500px;
+}
+@media (max-width: 1000px) {
+  #carouselExample {
+    width: 300px;
+  }
+  .carousel img {
+    max-height: 400px;
+  }
+}
+/* ==========================End our products ================= */

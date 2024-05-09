@@ -1,0 +1,6 @@
+<select class="mt-3 mb-3" (change)="detectChanges($event)">
+  <option value="All">All</option>
+  <option *ngFor="let item of data" value="{{ item }}">
+    {{ item | uppercase }}
+  </option>
+</select>

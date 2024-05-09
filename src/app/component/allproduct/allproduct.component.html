@@ -1,0 +1,31 @@
+<div class="page mt-3">
+  <div class="discreption mt-5">
+    <h4>All Products</h4>
+    <h3>Catagories</h3>
+  </div>
+  <!-- =================start select================ -->
+  <app-select
+    class="mt-4 mb-3"
+    [data]="catagories"
+    (selectedValue)="filterProducts($event)"
+  ></app-select>
+  <!-- =================End select================ -->
+  <!--========================= start cards======================== -->
+  <div *ngIf="!loaded" class="main-section row">
+    <div
+      class="col-lg-3 col-md-6 col-sm-12"
+      *ngFor="let singleProduct of allProducts"
+    >
+      <app-product
+        [data]="singleProduct"
+        (item)="addLocalStorage($event)"
+      ></app-product>
+    </div>
+  </div>
+  <!--========================= End cards======================== -->
+  <!-- start spineer -->
+  <div class="mt-5 mb-5">
+    <app-spiner *ngIf="loaded"></app-spiner>
+  </div>
+  <!-- End spineer -->
+</div>

@@ -1,0 +1,20 @@
+<div class="all-product">
+  <div class="product mt-2" style="width: 12rem">
+    <div routerLink="/details/{{ data.id }}" class="info">
+      <div class="product-image">
+        <img src="{{ data.image }}" class="card-img-top" alt="..." />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title mt-2">{{ data.title }}</h5>
+        <p class="card-text mt-2">{{ data.price | currency }}</p>
+      </div>
+    </div>
+    <button *ngIf="!addedPoduct" (click)="addedPoduct = true">
+      Add To Cart
+    </button>
+    <div *ngIf="addedPoduct" class="add-amount d-flex">
+      <input class="w-50" type="number" [(ngModel)]="amount" />
+      <button (click)="addToCart()" class="w-50">Add</button>
+    </div>
+  </div>
+</div>

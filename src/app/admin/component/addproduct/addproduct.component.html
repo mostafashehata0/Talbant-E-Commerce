@@ -1,0 +1,110 @@
+<!-- start addproduct button -->
+<button type="button" class="btn btn-primary mt-2 mb-2" (click)="openPopup()">
+  ADD PRODUCTS
+</button>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  style="overflow: auto"
+  [ngStyle]="{ display: displayStyle }"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Product Details</h4>
+        <i class="fa-solid fa-xmark" (click)="closePopup()"></i>
+      </div>
+      <!-- start product info -->
+      <div class="modal-body">
+        <form [formGroup]="addForm">
+          <div class="ms-2">
+            <label class="me-3" for="title">title</label>
+            <input formControlName="title" type="text" id="title" />
+          </div>
+          <div class="ms-2">
+            <label class="me-3" for="price">price</label>
+            <input formControlName="price" type="text" id="price" />
+          </div>
+          <div class="ms-2">
+            <label class="me-3" for="catgory">catgory</label>
+            <input formControlName="catgory" type="text" id="catgory" />
+          </div>
+          <div class="ms-2">
+            <label class="me-3" for="Image">Image</label>
+            <img src="{{ base64 }}" alt="" />
+            <input
+              formControlName="image"
+              type="file"
+              id="catgory"
+              (change)="getImagePath($event)"
+            />
+          </div>
+          <div class="form-floating mt-2">
+            <textarea
+              formControlName="description"
+              class="form-control"
+              id="floatingTextarea"
+            ></textarea>
+            <label for="floatingTextarea"></label>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary mt-2"
+            [disabled]="!addForm.valid"
+            (click)="addProduct()"
+          >
+            submit
+          </button>
+        </form>
+      </div>
+      <!-- End product info -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End addproduct button -->
+<!-- start product table -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-wrap">
+      <table class="table table-responsive">
+        <thead class="thead-primary">
+          <tr class="text-center">
+            <th>Product</th>
+
+            <th>Name</th>
+
+            <th>Catagory</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+            *ngFor="let item of products"
+            class="alert"
+            role="alert"
+          >
+            <td>
+              <img src="{{ item.image }}" alt="" />
+            </td>
+            <td>
+              <div class="email">
+                {{ item.title }}
+              </div>
+            </td>
+            <!-- ================start view button ============== -->
+            <td class="quantity">{{ item.category }}</td>
+            <!-- ================End view button ============== -->
+            <td>{{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="navbar mt-4 p-3">
+  <div class="title">
+    <img src="/assets/لقطة الشاشة 2024-02-01 075405.png" alt="" />
+    <h5>TALBANT STORE</h5>
+  </div>
+  <div class="pages" [class.visable]="navbarVisable">
+    <ul class="">
+      <li routerLink="/home">Home</li>
+      <hr />
+      <li routerLink="/AllProducts">All Products</li>
+      <hr />
+      <li><a>About</a></li>
+      <hr />
+      <li routerLink="/login">Sign Up</li>
+      <hr />
+    </ul>
+  </div>
+
+  <!-- start search -->
+  <div class="search">
+    <form role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="What You Want To Search"
+        aria-label="Search"
+      />
+    </form>
+    <div class="d-flex">
+      <div class="favorite">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <div class="shop-car">
+        <i routerLink="/cart" class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </div>
+  </div>
+  <!-- End search -->
+  <div class="button">
+    <button (click)="navToggle()">
+      <i class="fa-solid fa-grip-lines" style="color: #000000"></i>
+    </button>
+  </div>
+</div>
+<hr />
