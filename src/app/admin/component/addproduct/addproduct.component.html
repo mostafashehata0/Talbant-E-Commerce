@@ -28,7 +28,17 @@
           </div>
           <div class="ms-2">
             <label class="me-3" for="catgory">catgory</label>
-            <input formControlName="catgory" type="text" id="catgory" />
+
+            <select
+              formControlName="catgory"
+              class="form-select"
+              id="catgory"
+              aria-label="Default select example"
+            >
+              <ng-container *ngFor="let cat of catgory">
+                <option>{{ cat }}</option>
+              </ng-container>
+            </select>
           </div>
           <div class="ms-2">
             <label class="me-3" for="Image">Image</label>
@@ -36,7 +46,7 @@
             <input
               formControlName="image"
               type="file"
-              id="catgory"
+              id="Image"
               (change)="getImagePath($event)"
             />
           </div>
@@ -54,7 +64,7 @@
             [disabled]="!addForm.valid"
             (click)="addProduct()"
           >
-            submit
+            Add Product
           </button>
         </form>
       </div>
@@ -81,6 +91,7 @@
 
             <th>Catagory</th>
             <th>Price</th>
+            <th>Update</th>
           </tr>
         </thead>
         <tbody>
@@ -102,6 +113,106 @@
             <td class="quantity">{{ item.category }}</td>
             <!-- ================End view button ============== -->
             <td>{{ item.price }}</td>
+            <td>
+              <button
+                (click)="openPopup2()"
+                (click)="productDetails(item)"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+              <div
+                class="modal"
+                tabindex="-1"
+                role="dialog"
+                style="overflow: auto"
+                [ngStyle]="{ display: displayStyle2 }"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Product Details</h4>
+                      <i class="fa-solid fa-xmark" (click)="closePopup2()"></i>
+                    </div>
+                    <!-- start product info -->
+                    <div class="modal-body">
+                      <form [formGroup]="addForm">
+                        <div class="ms-2">
+                          <label class="me-3" for="title">title</label>
+                          <input
+                            formControlName="title"
+                            type="text"
+                            id="title"
+                          />
+                        </div>
+                        <div class="ms-2">
+                          <label class="me-3" for="price">price</label>
+                          <input
+                            formControlName="price"
+                            type="text"
+                            id="price"
+                          />
+                        </div>
+                        <div class="ms-2">
+                          <label class="me-3" for="catgory">catgory</label>
+
+                          <select
+                            formControlName="catgory"
+                            class="form-select"
+                            id="catgory"
+                            aria-label="Default select example"
+                          >
+                            <ng-container *ngFor="let cat of catgory">
+                              <option
+                                [value]="cat"
+                                [selected]="cat === catagoryType"
+                              >
+                                {{ cat }}
+                              </option>
+                            </ng-container>
+                          </select>
+                        </div>
+                        <div class="ms-2">
+                          <label class="me-3" for="Image">Image</label>
+                          <img src="{{ productImage }}" alt="" />
+                          <input
+                            formControlName="image"
+                            type="file"
+                            id="Image"
+                          />
+                        </div>
+                        <div class="form-floating mt-2">
+                          <textarea
+                            formControlName="description"
+                            class="form-control"
+                            id="floatingTextarea"
+                          ></textarea>
+                          <label for="floatingTextarea"></label>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-primary mt-2"
+                          [disabled]="!addForm.valid"
+                          (click)="updateProduct()"
+                        >
+                          UPDATE
+                        </button>
+                      </form>
+                    </div>
+                    <!-- End product info -->
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        (click)="closePopup2()"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

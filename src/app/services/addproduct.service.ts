@@ -10,4 +10,11 @@ export class AddproductService {
   getProducts() {
     return this.http.get(environment.baseApi + 'products');
   }
+
+  createProduct(modal: any) {
+    return this.http.post(environment.baseApi + 'products', modal);
+  }
+  updateProduct(modal: any) {
+    return this.http.put(environment.baseApi + 'products/7', modal);
+  }
 }
