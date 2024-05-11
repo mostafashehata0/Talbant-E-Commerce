@@ -12,6 +12,7 @@ export class AllproductComponent {
   catagories: any = [];
   cartOfProduct: any[] = [];
   loaded: boolean = false;
+  goToCart!: boolean;
 
   constructor(
     private getProductserv: GetproductService,
@@ -68,6 +69,7 @@ export class AllproductComponent {
   // =================start add to local storage function ==================================
   addLocalStorage(event: any) {
     this.addServ.addToLocalStorage(event);
+    this.goToCart = true;
   }
   // =================End add to local storage function ==================================
 }

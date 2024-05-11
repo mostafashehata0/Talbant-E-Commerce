@@ -5,13 +5,18 @@
   </div>
   <div class="pages" [class.visable]="navbarVisable">
     <ul class="">
-      <li routerLink="/home">Home</li>
+      <li #home (click)="selectNavItem(home)" routerLink="/home">Home</li>
       <hr />
-      <li routerLink="/AllProducts">All Products</li>
+      <li
+        #AllProducts
+        (click)="selectNavItem(AllProducts)"
+        routerLink="/AllProducts"
+      >
+        All Products
+      </li>
       <hr />
-      <li><a>About</a></li>
-      <hr />
-      <li routerLink="/login">Sign Up</li>
+
+      <li #login (click)="selectNavItem(login)" routerLink="/login">Sign Up</li>
       <hr />
     </ul>
   </div>

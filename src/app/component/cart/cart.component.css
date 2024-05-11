@@ -108,6 +108,12 @@ td {
   margin: auto;
   border: 2px solid gray;
 }
+@media (max-width: 1000px) {
+  .cart-details {
+    margin-top: 10px;
+    width: 300px;
+  }
+}
 .cart-details hr {
   margin: 0;
 }

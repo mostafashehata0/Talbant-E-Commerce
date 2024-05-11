@@ -7,6 +7,7 @@ import { RouterLink } from '@angular/router';
 import { SpinerComponent } from './spiner/spiner.component';
 import { ProductComponent } from './component/product/product.component';
 import { FormsModule, NgModel } from '@angular/forms';
+import { AddtocartComponent } from './component/addtocart/addtocart.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { FormsModule, NgModel } from '@angular/forms';
     HomeComponent,
     SpinerComponent,
     ProductComponent,
+    AddtocartComponent,
   ],
   imports: [CommonModule, RouterLink, FormsModule],
   exports: [
     NavbarComponent,
     HomeComponent,
     SpinerComponent,
+    AddtocartComponent,
     SelectComponent,
     ProductComponent,
     FormsModule,

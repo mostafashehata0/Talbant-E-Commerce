@@ -1,0 +1,12 @@
+/* styles.css or your component's CSS file */
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #db4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

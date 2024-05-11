@@ -157,3 +157,26 @@ button {
   margin-top: 2px;
   box-shadow: 1.5px 2px 4px;
 }
+
+@media (min-width: 1000px) {
+  .selected::after {
+    content: "";
+    width: 100px;
+    margin: auto;
+    height: 4px;
+    display: block;
+    background-color: #db4444;
+    position: absolute;
+    bottom: 15px;
+    overflow: hidden;
+    transform: translateX(-13px);
+    -webkit-transform: translateX(-13px);
+    -moz-transform: translateX(-13px);
+    -ms-transform: translateX(-13px);
+    -o-transform: translateX(-13px);
+  }
+
+  .navbar ul li {
+    width: 90px;
+  }
+}

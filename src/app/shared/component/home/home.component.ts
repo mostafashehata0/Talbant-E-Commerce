@@ -10,6 +10,7 @@ import { AddtolocalstorageService } from '../../services/addtolocalstorage.servi
 export class HomeComponent implements OnInit {
   someOfProducts: any = [];
   loaded: boolean = false;
+  goToCart!: boolean;
 
   constructor(
     private getproduct: GetproductService,
@@ -36,6 +37,7 @@ export class HomeComponent implements OnInit {
   // =================start add to local storage function ==================================
   addLocalStorage(event: any) {
     this.addServ.addToLocalStorage(event);
+    this.goToCart = true;
   }
   // =================End add to local storage function =================================
 }

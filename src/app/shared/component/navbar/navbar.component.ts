@@ -27,4 +27,13 @@ export class NavbarComponent implements OnInit {
   updateNavVisability(): void {
     this.navbarVisable = window.innerWidth < 1000;
   }
+
+  selectNavItem(selectedItem: HTMLElement) {
+    // Remove the 'selected' class from all items
+    const allItems = document.querySelectorAll('li');
+    allItems.forEach((item) => item.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked item
+    selectedItem.classList.add('selected');
+  }
 }
