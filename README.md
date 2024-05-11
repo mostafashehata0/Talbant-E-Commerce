@@ -1,2 +1,2 @@
 # TalbantEcommerce
-'https://app.netlify.com/sites/fancy-dodol-440610/overview'
+'https://fancy-dodol-440610.netlify.app/'
